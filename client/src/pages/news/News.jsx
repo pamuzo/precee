@@ -10,10 +10,9 @@ const News = () => {
     fetchNews();
   }, [fetchNews]);
 
-  console.log(news);
-
   return (
     <>
+      <div id="container-84cbaac29390979d3f33c9e2d9e9de53"></div>
       <Container>
         {news.map((newsItem, index) => (
           <div key={index}>

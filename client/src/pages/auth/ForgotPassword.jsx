@@ -84,7 +84,9 @@ const ForgotPassword = ({ onCodeSent }) => {
         w={"60%"}
         h={"100%"}
         overflow={"hidden"}
-      ></Box>
+      >
+        <div id="container-84cbaac29390979d3f33c9e2d9e9de53"></div>
+      </Box>
       <Box
         maxW={{ base: "100%", md: "40%" }}
         // overflow={"hidden"}

@@ -50,6 +50,7 @@ const Home = () => {
   if (loading) return <Spin />;
   if (error) return <Error error={error} />;
 
+  // to create ads between the  measurement map
   const updatedmeasyrements = measurements.flatMap((measure, index) => {
     return index === 2
       ? [measure, <VerticalAds key={`${measure.length + 1}`} />]
@@ -57,6 +58,7 @@ const Home = () => {
         // ? [measure, <Error key={`${measure.length + 2}`} />]
         measure;
   });
+
   // to get the number of days left
   const daysLeft = (measurement) => {
     return Math.floor(
@@ -138,19 +140,18 @@ const Home = () => {
         .filter((item) => {
           if (searchTerm === "") return item;
           else if (
-            item.phoneNumber.toString().includes(searchTerm.toLowerCase()) ||
-            item.name.toLowerCase().includes(searchTerm.toLowerCase())
+            item.phoneNumber?.toString().includes(searchTerm?.toLowerCase()) ||
+            item.name?.toLowerCase().includes(searchTerm?.toLowerCase())
           ) {
             return item;
           }
         })
 
-        .map((measurement, index) =>
+        .map((measurement) =>
           React.isValidElement(measurement) ? (
             measurement
           ) : (
             <Box key={measurement._id} position={"relative"}>
-              {/* {index === 2 ? [measurement, 99] : measurement} */}
               <Link to={`/${measurement._id}`}>
                 <Card position={"relative"}>
                   <HStack>
@@ -240,7 +241,11 @@ const Home = () => {
 
       <Box mb={20}></Box>
 
-      {!measurements.length && <p>No Measurements found.</p>}
+      {!measurements.length && (
+        <Box mb={"84px"}>
+          No Measurements found. Click Add button to add a new measurement🙌
+        </Box>
+      )}
     </Container>
   );
 };

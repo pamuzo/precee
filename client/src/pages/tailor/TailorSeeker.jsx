@@ -58,6 +58,8 @@ const TailorSeeker = () => {
           <BsEnvelopeAt /> <Text>lawancy@lawancy.com</Text>
         </HStack>
       </Box>
+      {/* ads */}
+      <div id="container-84cbaac29390979d3f33c9e2d9e9de53"></div>
     </Container>
   );
 };
