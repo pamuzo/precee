@@ -64,7 +64,14 @@ function App() {
           <Route path="/resetpassword" element={<ResetPassword />} />
 
           {/* <Route element={<PrivateRoutes />}> */}
-          <Route path="/measurementform" element={<MeasurementForm />} />
+          <Route
+            path="/measurementform"
+            element={
+              <PrivateRoutes>
+                <MeasurementForm />
+              </PrivateRoutes>
+            }
+          />
           <Route
             path="/measurements"
             element={
